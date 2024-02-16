@@ -1,0 +1,30 @@
+nav {
+  background-color: #333; /* Background color */
+  overflow: hidden;
+}
+.navIcon {
+  margin-right: 10px;
+  height: 50px;
+  width: 50px;
+}
+ul li {
+  float: left; /* Float the links to the left */
+  display: block; /* Make links block elements */
+  color: #f2f2f2; /* Text color */
+  text-align: center; /* Center-align text */
+  padding: 14px 20px; /* Padding */
+  text-decoration: none;
+}
+.linkItem {
+  text-decoration-line: none;
+}
+
+ul li:hover {
+  background-color: #ddd; /* Change background color on hover */
+  color: black;
+}
+
+ul li:active {
+  background-color: #04aa6d; /* Active link background color */
+  color: white;
+}
