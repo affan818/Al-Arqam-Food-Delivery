@@ -1,12 +1,14 @@
-import "./Navbar.css";
 import icon from "../assets/favIcon.png";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-success">
         <div className="container-fluid">
-          <img className="navIcon" src={icon} alt="" />
+          <Link>
+            <img className="navIcon" src={icon} alt="" />
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -38,12 +40,15 @@ const Navbar = () => {
             </ul>
             <form className="d-flex" role="search">
               <input
-                className="form-control me-2"
+                className="form-control me-2 bg-transparent text-light"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success" type="submit">
+              <button
+                className="btn btn-outline-warning text-light"
+                type="submit"
+              >
                 Search
               </button>
             </form>
