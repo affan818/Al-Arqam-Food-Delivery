@@ -1,31 +1,18 @@
-/* nav {
-  background-color: transparent;
-  overflow: hidden;
-} */
 .navIcon {
   margin-right: 10px;
   height: 50px;
   width: 50px;
 }
 ul li {
-  float: left; /* Float the links to the left */
-  display: block; /* Make links block elements */
-  color: #f2f2f2; /* Text color */
-  text-align: center; /* Center-align text */
-  padding: 14px 20px; /* Padding */
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 20px;
   text-decoration: none;
-}
-.linkItem {
-  text-decoration-line: none;
-}
-
-ul li:hover {
-  background-color: #ddd;
+  transition: all ease-in 1s;
   border-radius: 20px;
+}
+ul li:hover {
+  background-color: #81814f;
   color: black;
 }
-
-/* ul li:active {
-  background-color: #04aa6d; 
-  color: white;
-}  */
