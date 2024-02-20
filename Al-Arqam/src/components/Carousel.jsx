@@ -1,4 +1,3 @@
-
 const Carousel = () => {
   return (
     <div>
@@ -6,18 +5,19 @@ const Carousel = () => {
         id="carouselExampleInterval"
         className="carousel slide carousel-fade"
         data-bs-ride="carousel"
+        style={{ objectFit: "cover !important" }}
       >
         <div className="carousel-inner" id="carousel">
           <div className="carousel-caption" style={{ zIndex: "10" }}>
             <form className="d-flex">
               <input
-                className="form-control me-2"
+                className="form-control me-2 "
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
                 style={{ backgroundColor: "ThreeDFace" }}
               />
-              <button className="btn btn-outline-success" type="submit">
+              <button className="btn btn-outline-warning" type="submit">
                 Search
               </button>
             </form>
@@ -27,7 +27,7 @@ const Carousel = () => {
               src="https://source.unsplash.com/random/300×300/?kabab"
               className="d-block w-100"
               alt="..."
-              style={{ filter: "brightness(30%)", height: "600px" }}
+              style={{ filter: "brightness(30%)" }}
             />
           </div>
           <div className="carousel-item" data-bs-interval={2000}>
@@ -35,7 +35,7 @@ const Carousel = () => {
               src="https://source.unsplash.com/random/300×300/?dumbiryani"
               className="d-block w-100"
               alt="..."
-              style={{ filter: "brightness(30%)", height: "600px" }}
+              style={{ filter: "brightness(30%)" }}
             />
           </div>
           <div className="carousel-item" data-bs-interval={2000}>
@@ -43,7 +43,7 @@ const Carousel = () => {
               src="https://source.unsplash.com/random/300×500/?frychicken"
               className="d-block w-100"
               alt="..."
-              style={{ filter: "brightness(30%)", height: "600px" }}
+              style={{ filter: "brightness(30%)" }}
             />
           </div>
           <div className="carousel-item">
@@ -51,7 +51,7 @@ const Carousel = () => {
               src="https://source.unsplash.com/random/300×500/?mutton"
               className="d-block w-100"
               alt="..."
-              style={{ filter: "brightness(30%)", height: "600px" }}
+              style={{ filter: "brightness(30%)" }}
             />
           </div>
         </div>
