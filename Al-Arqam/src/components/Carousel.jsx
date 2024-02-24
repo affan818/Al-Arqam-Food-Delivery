@@ -46,14 +46,6 @@ const Carousel = () => {
               style={{ filter: "brightness(30%)" }}
             />
           </div>
-          <div className="carousel-item">
-            <img
-              src="https://source.unsplash.com/random/300×500/?mutton"
-              className="d-block w-100"
-              alt="..."
-              style={{ filter: "brightness(30%)" }}
-            />
-          </div>
         </div>
         <button
           className="carousel-control-prev"
