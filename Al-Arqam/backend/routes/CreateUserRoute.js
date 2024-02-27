@@ -2,10 +2,15 @@ import express from "express";
 import createUser from "../CRUD/create.js";
 const router = express.Router();
 
-router.post("/create", (req, res) => {
-  createUser();
-    res.send({ success: true });
+//get props and destructure it
+router.post("/create", async (req, res) => {
+  await createUser(
+    req.body.name,
+    req.body.email,
+    req.body.password,
+    req.body.location
+  );
+  res.send({ success: true });
 });
 
 export default router;
-

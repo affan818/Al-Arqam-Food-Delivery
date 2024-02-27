@@ -1,25 +1,20 @@
 import userModel from "../models/UserModel.js";
 
 // try to create manual users
-async function createUser() {
+//pass props 
+async function createUser(name, email, password, location) {
   try {
     const user = new userModel({
-      name: "sidra",
-      email: "fffd@fb.vom",
-      password: "12354",
-      location: "nagpur",
-    });
-    const user2 = new userModel({
-      name: "imran ahmad ansari",
-      email: "fffd@fb.vom",
-      password: "12354",
-      location: "nagpur",
+      name: name,
+      email: email,
+      password: password,
+      location: location,
     });
     // use insert many for add many data in one post
-    const result = await userModel.insertMany([user, user2]);
+    const result = await user.save();
     console.log(result);
   } catch (error) {
-    console.log(`ERROR________-`);
+    console.log(`ERROR________${error}`);
   }
 }
 
