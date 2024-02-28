@@ -9,10 +9,9 @@ ul li {
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
-  transition: all ease-in 1s;
   border-radius: 20px;
 }
 ul li:hover {
-  background-color: #81814f;
-  color: black;
+  background-color: white;
+ 
 }

@@ -1,3 +1,4 @@
+import "./carousel.css";
 const Carousel = () => {
   return (
     <div>
@@ -32,7 +33,7 @@ const Carousel = () => {
           </div>
           <div className="carousel-item" data-bs-interval={2000}>
             <img
-              src="https://source.unsplash.com/random/300×300/?dumbiryani"
+              src="https://source.unsplash.com/random/300×300/?biryani"
               className="d-block w-100"
               alt="..."
               style={{ filter: "brightness(30%)" }}

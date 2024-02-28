@@ -1,5 +1,6 @@
 import icon from "../assets/favIcon.png";
 import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.css";
 const Navbar = () => {
   return (
@@ -23,30 +24,47 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
               <li className="nav-item ">
-                <Link className="nav-link active text-light" aria-current="page" to={"/"}>
+                <Link className="nav-link" style={{ color: "black" }} to={"/"}>
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-light" to={"/about"}>
+                <Link
+                  className="nav-link"
+                  style={{ color: "black" }}
+                  to={"/about"}
+                >
                   About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-light" to={"/contact"}>
+                <Link
+                  className="nav-link"
+                  style={{ color: "black" }}
+                  to={"/contact"}
+                >
                   Contact
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  style={{ color: "black" }}
+                  to={"/signup"}
+                >
+                  Signup
                 </Link>
               </li>
             </ul>
             <form className="d-flex" role="search">
               <input
-                className="form-control me-2 bg-transparent text-light"
+                className="form-control me-2 bg-transparent text-dark"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
               />
               <button
-                className="btn btn-outline-warning text-light"
+                className="btn btn-outline-warning text-dark"
                 type="submit"
               >
                 Search

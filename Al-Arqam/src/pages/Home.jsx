@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "../components/Card";
 import Carousel from "../components/Carousel";
 

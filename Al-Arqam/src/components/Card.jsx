@@ -10,13 +10,16 @@ const Card = () => {
           <h5 className="card-title">Card title</h5>
           <p className="card-text">cards</p>
           <div className="container w-100">
-            <select className="m-2 h-100 bg-success" style={{ color: "white" }}>
+            <select
+              className="m-2 h-100 bg-success rounded"
+              style={{ color: "white" }}
+            >
               {num.map((e, i) => {
                 return <option key={i}>{e}</option>;
               })}
             </select>
             <select
-              className="m-2 h-100  bg-success"
+              className="m-2 h-100 bg-success rounded"
               style={{ color: "white" }}
             >
               <option className="size">Helf</option>
