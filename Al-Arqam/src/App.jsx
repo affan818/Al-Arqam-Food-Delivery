@@ -9,7 +9,7 @@ import Login from "./pages/Login";
 
 const App = () => {
   return (
-    <div style={{ backgroundColor: "white", color: "black" }}>
+    <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
