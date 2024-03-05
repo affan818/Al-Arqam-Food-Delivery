@@ -1,6 +1,7 @@
 import express from "express";
 import { body, validationResult } from "express-validator";
 import userModel from "../models/UserModel.js";
+import bcrypt from "bcrypt";
 // import createUser from "../CRUD/create.js";
 const router = express.Router();
 
@@ -12,19 +13,27 @@ router.post(
   body("password", "password must have five character").isLength({ min: 5 }),
   async (req, res) => {
     const errors = validationResult(req);
+    const salt = await bcrypt.genSalt(8);
+    let secPassword = await bcrypt.hash(req.body.password, salt);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     } else {
-      await userModel.create(req.body);
-      res.send({ success: true });
+      await userModel
+        .create({
+          name: req.body.name,
+          password: secPassword,
+          email: req.body.email,
+        })
+        .then(() => res.send({ success: true }));
     }
   }
 );
 router.post("/login", (req, res) => {
   const { email, password } = req.body;
   userModel.findOne({ email: email }).then((user) => {
+    let hashPassword = bcrypt.compare(user.password,password)
     if (user) {
-      if (user.password === password) {
+      if (hashPassword) {
         res.json("Success");
       } else {
         res.json("The password is incorrect");
