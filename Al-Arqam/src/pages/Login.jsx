@@ -16,8 +16,11 @@ const Login = () => {
       .post("http://localhost:3000/login", { email, password })
       .then((result) => {
         console.log(result);
-        if (result.data === "Success") {
+        if (result.data.success == true) {
+          console.log(result.data);
           navigate("/");
+          localStorage.setItem("authToken", result.authToken);
+          // console.log(localStorage.getItem("authToken")) // read it
         } else {
           navigate("/signup");
           alert(result.data);
