@@ -11,9 +11,16 @@ async function connectDB() {
       console.log(`DB connected to ${DB_URL}`);
       const fetch_data = await mongoose.connection.db.collection("foodItems");
       // eslint-disable-next-line no-undef
-      global.foodItems = await fetch_data
-        .find({})
-        .toArray();
+      global.foodItems = await fetch_data.find({}).toArray();
+      // eslint-disable-next-line no-undef
+      if (global.foodItems !== Error) {
+        const foodCategory = await mongoose.connection.db.collection(
+          "foodCategories"
+        );
+        // eslint-disable-next-line no-undef
+        global.foodcategories = await foodCategory.find({}).toArray();
+      }
+      // console.log(global.foodcategories)
     })
     .catch((error) => {
       console.log(`ERROR:- ${error}`);
