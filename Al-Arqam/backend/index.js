@@ -4,6 +4,7 @@ dotenv.config();
 import cors from "cors";
 import connectDB from "./DB/connection.js";
 import createUserRoute from "./routes/CreateUserRoute.js";
+import DisplayData from "./routes/DisplayData.js";
 // import createUser from "./CRUD/create.js";
 const app = express();
 // eslint-disable-next-line no-undef
@@ -15,6 +16,8 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 app.use(createUserRoute);
+app.use(DisplayData);
+
 // createUser()
 app.get("/", (req, res) => {
   res.send("<h1>Wellcome</h1>");
