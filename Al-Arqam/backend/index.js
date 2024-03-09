@@ -4,7 +4,7 @@ dotenv.config();
 import cors from "cors";
 import connectDB from "./DB/connection.js";
 import createUserRoute from "./routes/CreateUserRoute.js";
-import DisplayData from "./routes/DisplayData.js";
+import DisplayData from "./routes/DisplayDataRoute.js";
 // import createUser from "./CRUD/create.js";
 const app = express();
 // eslint-disable-next-line no-undef
