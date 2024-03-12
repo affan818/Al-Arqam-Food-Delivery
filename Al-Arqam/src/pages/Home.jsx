@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "../components/Card";
+import "./carousel.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
