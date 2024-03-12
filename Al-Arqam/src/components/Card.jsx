@@ -10,11 +10,10 @@ const Card = ({ foodName, imgSrc, options }) => {
           src={imgSrc}
           className="card-img-top"
           alt="..."
-          style={{ width: "18rem", maxHeight: "12rem" }}
+          style={{ width: "18rem", maxHeight: "11rem" }}
         />
         <div className="card-body">
           <h5 className="card-title">{foodName}</h5>
-          <p className="card-text">cards</p>
           <div className="container w-100">
             <select
               className="m-2 h-100 bg-success rounded"
