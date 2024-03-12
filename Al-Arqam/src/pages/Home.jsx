@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "../components/Card";
-import Carousel from "../components/Carousel";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Home = () => {
+  const [search, setSearch] = useState("");
   const [foodItem, setFoodItem] = useState([]);
   const [foodCate, setFoodCate] = useState([]);
   const loadData = async () => {
@@ -28,7 +28,75 @@ const Home = () => {
   return (
     <div>
       <div>
-        <Carousel />
+        <div
+          id="carouselExampleInterval"
+          className="carousel slide carousel-fade"
+          data-bs-ride="carousel"
+          style={{ objectFit: "cover !important" }}
+        >
+          <div className="carousel-inner" id="carousel">
+            <div className="carousel-caption" style={{ zIndex: "10" }}>
+              <div className="d-flex justify-content-center">
+                <input
+                  className="form-control me-2 "
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  value={search}
+                  onChange={(e) => {
+                    setSearch(e.target.value);
+                  }}
+                  style={{ backgroundColor: "ThreeDFace" }}
+                />
+                {/* <button className="btn btn-outline-warning" type="submit">
+                Search
+              </button> */}
+              </div>
+            </div>
+            <div className="carousel-item active" data-bs-interval={2000}>
+              <img
+                src="https://source.unsplash.com/random/300×300/?pitas"
+                className="d-block w-100"
+                alt="..."
+                style={{ filter: "brightness(30%)" }}
+              />
+            </div>
+            <div className="carousel-item" data-bs-interval={2000}>
+              <img
+                src="https://source.unsplash.com/random/300×300/?fish and chips"
+                className="d-block w-100"
+                alt="..."
+                style={{ filter: "brightness(30%)" }}
+              />
+            </div>
+            <div className="carousel-item" data-bs-interval={2000}>
+              <img
+                src="https://source.unsplash.com/random/300×500/?sandwiches"
+                className="d-block w-100"
+                alt="..."
+                style={{ filter: "brightness(30%)" }}
+              />
+            </div>
+          </div>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleInterval"
+            data-bs-slide="prev"
+          >
+            <span className="carousel-control-prev-icon" aria-hidden="true" />
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleInterval"
+            data-bs-slide="next"
+          >
+            <span className="carousel-control-next-icon" aria-hidden="true" />
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
       <div className="container">
         {foodCate !== 0 ? (
@@ -40,7 +108,12 @@ const Home = () => {
                 {foodItem !== 0
                   ? foodItem
                       .filter((item) => {
-                        return item.CategoryName === data.CategoryName;
+                        return (
+                          item.CategoryName === data.CategoryName &&
+                          item.name
+                            .toLowerCase()
+                            .includes(search.toLocaleLowerCase())
+                        );
                       })
                       .map((filterItems) => {
                         return (
