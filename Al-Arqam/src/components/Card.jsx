@@ -1,13 +1,19 @@
-import cardImg1 from "../assets/donger.jpg";
 let num = [1, 2, 3, 4, 5];
 
-const Card = () => {
+// eslint-disable-next-line react/prop-types
+const Card = ({ foodName, imgSrc, options }) => {
+  let priceOption = Object.keys(options);
   return (
     <div>
       <div className="card mt-3" style={{ width: "18rem", maxHeight: "360px" }}>
-        <img src={cardImg1} className="card-img-top" alt="..." />
+        <img
+          src={imgSrc}
+          className="card-img-top"
+          alt="..."
+          style={{ width: "18rem", maxHeight: "12rem" }}
+        />
         <div className="card-body">
-          <h5 className="card-title">Card title</h5>
+          <h5 className="card-title">{foodName}</h5>
           <p className="card-text">cards</p>
           <div className="container w-100">
             <select
@@ -20,10 +26,14 @@ const Card = () => {
             </select>
             <select
               className="m-2 h-100 bg-success rounded"
-              style={{ color: "white" }}
             >
-              <option className="size">Helf</option>
-              <option className="size">Full</option>
+              {priceOption.map((e) => {
+                return (
+                  <option key={e} value={e}>
+                    {e}
+                  </option>
+                );
+              })}
             </select>
             <div className="d-inline h-100 fs-5">Total Price</div>
           </div>

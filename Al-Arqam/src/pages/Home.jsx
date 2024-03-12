@@ -44,8 +44,15 @@ const Home = () => {
                       })
                       .map((filterItems) => {
                         return (
-                          <div key={filterItems._id} className="col-12 col-sm-6 col-lg-3">
-                            <Card />
+                          <div
+                            key={filterItems._id}
+                            className="col-12 col-sm-6 col-lg-3"
+                          >
+                            <Card
+                              foodName={filterItems.name}
+                              imgSrc={filterItems.img}
+                              options={filterItems.options[0]}
+                            />
                           </div>
                         );
                       })
