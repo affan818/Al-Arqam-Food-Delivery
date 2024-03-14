@@ -5,12 +5,15 @@ const Card = ({ foodName, imgSrc, options }) => {
   let priceOption = Object.keys(options);
   return (
     <div>
-      <div className="card mt-3" style={{ width: "18rem", maxHeight: "360px" }}>
+      <div
+        className="card mt-3"
+        style={{ width: "18rem", maxHeight: "22.5rem" }}
+      >
         <img
           src={imgSrc}
           className="card-img-top"
           alt="..."
-          style={{ width: "18rem", maxHeight: "11rem" }}
+          style={{ height: "8rem", objectFit: "fill" }}
         />
         <div className="card-body">
           <h5 className="card-title">{foodName}</h5>
@@ -23,9 +26,7 @@ const Card = ({ foodName, imgSrc, options }) => {
                 return <option key={i}>{e}</option>;
               })}
             </select>
-            <select
-              className="m-2 h-100 bg-success rounded"
-            >
+            <select className="m-2 h-100 bg-success rounded">
               {priceOption.map((e) => {
                 return (
                   <option key={e} value={e}>
@@ -36,6 +37,10 @@ const Card = ({ foodName, imgSrc, options }) => {
             </select>
             <div className="d-inline h-100 fs-5">Total Price</div>
           </div>
+          <hr />
+          <button className="btn btn-success justify-center ms-2">
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
